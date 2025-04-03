@@ -118,22 +118,22 @@ col1, col2, col3, col4 = st.columns(4)
 if not metal_prices.get("Gold"):
     gold_data = get_metal_data("GC=F")
     if not gold_data.empty:
-        metal_prices["Gold"] = gold_data['Close'].iloc[-1] / 28
+        metal_prices["Gold"] = float(gold_data['Close'].iloc[-1] / 28)
 
 if not metal_prices.get("Silver"):
     silver_data = get_metal_data("SI=F")
     if not silver_data.empty:
-        metal_prices["Silver"] = silver_data['Close'].iloc[-1] / 28
+        metal_prices["Silver"] = float(silver_data['Close'].iloc[-1] / 28)
 
 if not metal_prices.get("Platinum"):
     platinum_data = get_metal_data("PL=F")
     if not platinum_data.empty:
-        metal_prices["Platinum"] = platinum_data['Close'].iloc[-1] / 28
+        metal_prices["Platinum"] = float(platinum_data['Close'].iloc[-1] / 28)
 
 if not metal_prices.get("Palladium"):
     palladium_data = get_metal_data("PA=F")
     if not palladium_data.empty:
-        metal_prices["Palladium"] = palladium_data['Close'].iloc[-1] / 28
+        metal_prices["Palladium"] = float(palladium_data['Close'].iloc[-1] / 28)
 
 # Display prices in columns
 with col1:
